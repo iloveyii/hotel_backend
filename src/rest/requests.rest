@@ -21,23 +21,6 @@ Content-Type: application/json
 }
 
 
-### POST
-POST https://weblogin.bigo.tv/broadcast
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cookie" : "www_random_gray=52; hd_newui=0.5985212673531388; hiido_ui=0.02853851294476395; Hm_lvt_ef2c06455567cdcf7b58f36f40dbcd35=1609111635; sid=00439c51b90f713cb1550c9af40e95bb; _gid=GA1.2.426286590.1617025211; uidToken=AwAAAOY5bgKZHbIJzoA7W0VJ7Q0bY+VbcuA2/82/Om6y7kzAZ6FHhCvNKvDm0YJXVquEjLFUlxb1TZHYTlk5OrE6Glni++0PmAD2wE1+lmF3He3ipEgLt9F1CsGGZ0au9i8uwyQ/zZQ=###VER2; _ga=GA1.2.692104173.1603396821; _ga_DQCYXPLCZZ=GS1.1.1617025787.2.1.1617025901.0; data5=http://esx.bigo.sg/eu_live/2u2/1FMdiM.jpg; user_name=pinocchio.1; yyuid=617390850; _gat=1; uniqid=090000003dc042511e75c5c219abd9fa32b43ff2b562162e03373b41e550d2951e41f645e1f666b3ace7600372e6e5a3545eb34eda3f21b7263b; tid=uBpw+EQWbScboip5GAqGJg==; nick_name=Power; head_icon_url=http://esx.bigo.sg/eu_live/2u2/1FMdiM.jpg",
-  "interfaceName": "sendChat",
-  "type":1,
-  "content": "hi+dear",
-  "bc_gid":"6380245126654815270&owner=1581143648"
-}
-
-### # curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"title":"value", "description":"desc1"}' http://localhost:8090/api/v1/quote
-
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"interfaceName":"sendChat", "type":"1", "content": "hi friend", "bc_gid":"6380245126654815270&owner=1581143648"}' -v --cookie "www_random_gray=52; hd_newui=0.5985212673531388; hiido_ui=0.02853851294476395; Hm_lvt_ef2c06455567cdcf7b58f36f40dbcd35=1609111635; sid=00439c51b90f713cb1550c9af40e95bb; _gid=GA1.2.426286590.1617025211; uidToken=AwAAAOY5bgKZHbIJzoA7W0VJ7Q0bY+VbcuA2/82/Om6y7kzAZ6FHhCvNKvDm0YJXVquEjLFUlxb1TZHYTlk5OrE6Glni++0PmAD2wE1+lmF3He3ipEgLt9F1CsGGZ0au9i8uwyQ/zZQ=###VER2; _ga=GA1.2.692104173.1603396821; _ga_DQCYXPLCZZ=GS1.1.1617025787.2.1.1617025901.0; data5=http://esx.bigo.sg/eu_live/2u2/1FMdiM.jpg; user_name=pinocchio.1; yyuid=617390850; uniqid=090000003dc042511e75c5c219abd9fa32b43ff2b562162e03373b41e550d2951e41f645e1f666b3ace7600372e6e5a3545eb34eda3f21b7263b; tid=uBpw+EQWbScboip5GAqGJg==; nick_name=Power; head_icon_url=http://esx.bigo.sg/eu_live/2u2/1FMdiM.jpg" https://weblogin.bigo.tv/broadcast
-
 <> 2021-03-04T224827.200.txt
 <> 2021-03-04T224239.200.txt
 <> 2021-03-04T144418.404.json

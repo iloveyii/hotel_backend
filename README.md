@@ -10,7 +10,7 @@ Spring boot based web application
 
 
 ## Configuration
-- View paths in templates/application.properties
+- The `view` paths in templates/application.properties
 ```java
 spring.mvc.view.prefix: /WEB-INF/
 spring.mvc.view.suffix: .html
