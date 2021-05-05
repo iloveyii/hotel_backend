@@ -29,5 +29,11 @@ spring.mvc.view.suffix: .html
 - Find jar file in target dir and run `java -jar file.jar`
 - Run with pm2 `pm2 start 'java -jar file.jar' --name java-tomcat`
 
+
+## Run with Docker
+- Build `docker build -t hotel_backend_image .`
+- Run `docker run -ti --rm -v /home/alex/projects/java/hotel_backend/:/java/app/ -p 8090:8090 --name hotel_backend_container hotel_backend_image   bash`
+- Make jar `mvn clean install`
+- Run jar file `java -jar target/backend-0.0.1-SNAPSHOT.jar`
 ### Shortcuts IntelliJ
 - Insert dependency -> open pom file -> ALT + Insert
