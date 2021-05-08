@@ -47,5 +47,6 @@ Content-Type: application/json
 
 {
   "number": "0111",
-  "price": 300.0
+  "price": 300.0,
+  "booked": "yes"
 }
