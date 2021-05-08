@@ -1,59 +1,3 @@
-###
-POST http://localhost:8090/event/create?title=title1&description=description1
-
-### api endpoint
-POST http://localhost:8090/api/v1/quote
-
-Content-Type: application/json
-{
-"title" : "abc".
-"description" : "abcd"
-}
-
-### # curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"title":"value", "description":"desc1"}' http://localhost:8090/api/v1/quote
-POST http://localhost:8090/api/v1/quote
-Accept: application/json
-Content-Type: application/json
-
-{
-  "title": "value",
-  "description": "desc1"
-}
-
-
-<> 2021-03-04T224827.200.txt
-<> 2021-03-04T224239.200.txt
-<> 2021-03-04T144418.404.json
-
-
-### api endpoint
-GET http://localhost:8090/api/v1/quote
-
-
-
-###
-GET http://localhost:8090/event/index
-
-<> 2021-03-04T224853.200.json
-<> 2021-03-04T224716.200.json
-<> 2021-03-04T224700.200.json
-
-###
-
-GET http://localhost:8090/event/1
-
-###
-
-POST http://localhost:8090/db/create?title=title1&description=description1
-
-<> 2021-03-04T224827.200.txt
-<> 2021-03-04T224239.200.txt
-<> 2021-03-04T144418.404.json
-
-###
-
-GET http://localhost:8090/db/index
-
 
 ### Authenticate
 
@@ -63,7 +7,7 @@ Content-Type: application/json
 
 {
   "username": "root@admin.com",
-  "password": "root123"
+  "password": "root12"
 }
 
 
@@ -84,3 +28,24 @@ Content-Type: application/json
 GET http://localhost:8090/api/v1/users
 Accept: application/json
 Content-Type: application/json
+
+
+
+### Room get
+
+GET http://localhost:8090/api/v1/rooms
+Accept: application/json
+Content-Type: application/json
+
+
+
+### Room post
+
+POST http://localhost:8090/api/v1/rooms
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5MjE2LCJpYXQiOjE2MTU3MzEyMTZ9.nvrTFKISS3jvZEumIpjMNzSGAPLbAqN_rvM8EY_C4CPtiahaNEVCGu8VSU3oTP4ipKcK7wlBmFdi-wpukSdd9w
+Content-Type: application/json
+
+{
+  "number": "0111",
+  "price": 300.0
+}

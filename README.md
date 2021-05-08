@@ -3,6 +3,28 @@ JAVA Spring boot
 Spring boot based web application
 
 ## Installations
+### Java
+- Install update `sudo apt update`
+- Install jdk `sudo apt install openjdk-11-jdk`
+- Install jre `sudo apt install openjdk-11-jre`
+- Some applications still don’t fully support the latest OpenJDK 11. For those, they can install the previous Java LTS which was version 8.
+- `sudo apt install openjdk-8-jdk`
+- If you have multiple versions of Java installed, simply use the commands below to set which one should be the default for your system.
+- `sudo update-alternatives --config java`
+- Some program require that JAVA_HOME is configured on the system. You can set the default home by using the lines above in the config file.
+- For Java 11, it displays /usr/lib/jvm/java-11-openjdk-amd64 and Java 8, it’s /usr/lib/jvm/java-8-openjdk-amd64.
+- To set their homes, run the commands below to open the system environment file.
+- `sudo nano /etc/environment`
+- Then add a line for Java 11 as below:
+- `JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"`
+- Run the commands below to save your changes.
+- `source /etc/environment`
+
+### Maven
+- Install maven `sudo apt install maven`
+ 
+
+### Spring
 - Install plugin in Settings > Plugins and search Spring Assistant
 - Create spring based app in IJ and add dependencies, web, devtools, actuator
 - Create Controller at src main java with annotations like Controller, GetMapping etc
@@ -11,9 +33,9 @@ Spring boot based web application
 
 ## Configuration
 - The `view` paths in templates/application.properties
-```java
-spring.mvc.view.prefix: /WEB-INF/
-spring.mvc.view.suffix: .html
+```yaml
+    spring.mvc.view.prefix: /WEB-INF/
+    spring.mvc.view.suffix: .html
 ```
 
 ## Testing
@@ -32,8 +54,15 @@ spring.mvc.view.suffix: .html
 
 ## Run with Docker
 - Build `docker build -t hotel_backend_image .`
-- Run `docker run -ti --rm -v /home/alex/projects/java/hotel_backend/:/java/app/ -p 8090:8090 --name hotel_backend_container hotel_backend_image   bash`
+- Run `docker run -ti --rm -v /home/alex/projects/java/hotel_backend/:/java/app/ -p 8090:8090 --name hotel_backend_container hotel_backend_image bash`
 - Make jar `mvn clean install`
 - Run jar file `java -jar target/backend-0.0.1-SNAPSHOT.jar`
+
 ### Shortcuts IntelliJ
 - Insert dependency -> open pom file -> ALT + Insert
+
+
+
+## Issues
+- Could not initialize class org.jetbrains.jps.builders.JpsBuildBundle
+- Solution: Update / reinstall IJ
