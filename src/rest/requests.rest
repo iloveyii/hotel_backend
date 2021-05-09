@@ -67,3 +67,32 @@ Content-Type: application/json
   "price": 200.0,
   "booked": "no"
 }
+
+
+
+
+### Inquiry get
+
+GET http://localhost:8090/api/v1/inquiries
+Accept: application/json
+Content-Type: application/json
+
+
+### Inquiry post
+
+POST http://localhost:8090/api/v1/inquiries
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5MjE2LCJpYXQiOjE2MTU3MzEyMTZ9.nvrTFKISS3jvZEumIpjMNzSGAPLbAqN_rvM8EY_C4CPtiahaNEVCGu8VSU3oTP4ipKcK7wlBmFdi-wpukSdd9w
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "phone": "111-222-333",
+  "email": "john@doe.com",
+  "address": "street 101, Downtown",
+  "language_from": "ar",
+  "language_to": "sv",
+  "notes": "testing app",
+  "status": 1
+}
+
+

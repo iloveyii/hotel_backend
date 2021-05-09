@@ -28,7 +28,7 @@ public class ApiController {
     Logger logger = LogManager.getLogger(ApiController.class);
 
     @PutMapping("/api/v1/inquiries/{id}")
-    public Result updateQuoteInquiry(@PathVariable  String id, @RequestBody Inquiry inquiry) throws JsonProcessingException {
+    public Result updateInquiry(@PathVariable  String id, @RequestBody Inquiry inquiry) throws JsonProcessingException {
         inquiryService.update(inquiry);
         Result result = new Result(true, "status changed to " + inquiry.getStatus() );
         return result;
@@ -48,7 +48,7 @@ public class ApiController {
     }
 
      @GetMapping("/api/v1/inquiries")
-     public Response getInquirys(Model model, @RequestHeader String host) throws JsonProcessingException {
+     public Response getInquiries(Model model, @RequestHeader String host) throws JsonProcessingException {
         return new Response(true, inquiryService.all());
     }
 }
