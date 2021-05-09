@@ -1,6 +1,5 @@
 package com.cms.backend.controllers;
 
-import com.cms.backend.data.InquiryRepository;
 import com.cms.backend.models.Inquiry;
 import com.cms.backend.models.Response;
 import com.cms.backend.models.Result;
@@ -13,11 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import java.util.Optional;
-
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-public class ApiController {
+public class InquiryController {
 
     @Autowired
     InquiryService inquiryService;
@@ -25,7 +22,7 @@ public class ApiController {
     @Value("${server.api}")
     private String serverApi;
 
-    Logger logger = LogManager.getLogger(ApiController.class);
+    Logger logger = LogManager.getLogger(InquiryController.class);
 
     @PutMapping("/api/v1/inquiries/{id}")
     public Result updateInquiry(@PathVariable  String id, @RequestBody Inquiry inquiry) throws JsonProcessingException {
