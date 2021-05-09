@@ -11,7 +11,7 @@ Spring boot based web application
 - `sudo apt install openjdk-8-jdk`
 - If you have multiple versions of Java installed, simply use the commands below to set which one should be the default for your system.
 - `sudo update-alternatives --config java`
-- Some program require that JAVA_HOME is configured on the system. You can set the default home by using the lines above in the config file.
+- Some programs require that JAVA_HOME is configured on the system. You can set the default home by using the lines above in the config file.
 - For Java 11, it displays /usr/lib/jvm/java-11-openjdk-amd64 and Java 8, it’s /usr/lib/jvm/java-8-openjdk-amd64.
 - To set their homes, run the commands below to open the system environment file.
 - `sudo nano /etc/environment`
@@ -62,10 +62,8 @@ Spring boot based web application
 - Build `docker-compose up --build`
 
 
-
 ## Shortcuts IntelliJ
 - Insert dependency -> open pom file -> ALT + Insert
-
 
 
 ## Issues
