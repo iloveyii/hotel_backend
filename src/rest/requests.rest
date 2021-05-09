@@ -56,7 +56,6 @@ Accept: application/json
 Content-Type: application/json
 
 
-
 ### Room post
 
 POST http://localhost:8090/api/v1/rooms

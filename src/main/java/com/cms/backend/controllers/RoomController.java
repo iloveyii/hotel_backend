@@ -3,9 +3,9 @@ package com.cms.backend.controllers;
 
 import com.cms.backend.data.RoomRepository;
 import com.cms.backend.models.ResponseRoom;
-import com.cms.backend.models.ResponseUser;
 import com.cms.backend.models.Result;
 import com.cms.backend.models.Room;
+import com.cms.backend.service.RoomService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,27 +17,23 @@ import java.util.Optional;
 public class RoomController {
 
     @Autowired
-    RoomRepository roomRepository;
+    RoomService roomService;
 
     @PostMapping("/api/v1/rooms")
     public Result createRoom(@RequestBody Room room) throws JsonProcessingException {
-        roomRepository.save(room);
+        roomService.create(room);
         return new Result(true, "Room saved");
     }
 
     @GetMapping("/api/v1/rooms")
     public ResponseRoom getRooms() throws JsonProcessingException {
-        return new ResponseRoom(true, roomRepository.findAll());
+        return new ResponseRoom(true, roomService.all());
     }
 
     @DeleteMapping("/api/v1/rooms/{id}")
     public Result deleteRoom(@PathVariable  Integer id) throws JsonProcessingException {
-        Result result = new Result(true, "Room deleted with id " + id );
-        Optional<Room> room =  roomRepository.findById(id);
-
-        if(room.isPresent()) {
-            roomRepository.deleteById(id);
-        }
+        boolean status = roomService.delete(id);
+        Result result = new Result(status, "Room deleted with id " + id );
         return result;
     }
 }
