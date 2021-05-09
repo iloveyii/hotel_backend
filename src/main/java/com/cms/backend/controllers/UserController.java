@@ -1,16 +1,11 @@
 package com.cms.backend.controllers;
 
 
-import com.cms.backend.data.QuestionRepository;
-import com.cms.backend.data.UserRepository;
 import com.cms.backend.models.*;
 import com.cms.backend.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.Entity;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

@@ -1,16 +1,13 @@
 package com.cms.backend.controllers;
 
 import com.cms.backend.data.InquiryRepository;
-import com.cms.backend.data.QuestionRepository;
 import com.cms.backend.models.Inquiry;
-import com.cms.backend.models.Question;
 import com.cms.backend.models.Response;
 import com.cms.backend.models.Result;
+import com.cms.backend.service.InquiryService;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +20,7 @@ import java.util.Optional;
 public class ApiController {
 
     @Autowired
-    QuestionRepository questionRepository;
+    InquiryService inquiryService;
 
     @Value("${server.api}")
     private String serverApi;
@@ -31,38 +28,27 @@ public class ApiController {
     Logger logger = LogManager.getLogger(ApiController.class);
 
     @PutMapping("/api/v1/inquiries/{id}")
-    public Result updateQuoteInquiry(@PathVariable  Integer id, @RequestBody Question form) throws JsonProcessingException {
-        Result result = new Result(true, "status changed to " + form.getStatus() );
-        Optional<Question> question =  questionRepository.findById(id);
-
-        if(question.isPresent()) {
-            Question q = question.get();
-            q.setStatus(form.getStatus());
-            questionRepository.save(q);
-        }
+    public Result updateQuoteInquiry(@PathVariable  String id, @RequestBody Inquiry inquiry) throws JsonProcessingException {
+        inquiryService.update(inquiry);
+        Result result = new Result(true, "status changed to " + inquiry.getStatus() );
         return result;
     }
 
     @DeleteMapping("/api/v1/inquiries/{id}")
-    public Result deleteQuestion(@PathVariable  Integer id) throws JsonProcessingException {
-        Result result = new Result(true, "Inquiry deleted with _id " + id );
-        Optional<Question> question =  questionRepository.findById(id);
-
-        if(question.isPresent()) {
-            questionRepository.deleteById(id);
-        }
+    public Result deleteInquiry(@PathVariable  String id) throws JsonProcessingException {
+        boolean status = inquiryService.delete(id);
+        Result result = new Result(status, "Inquiry deleted with _id " + id );
         return result;
     }
 
     @PostMapping("/api/v1/inquiries")
-    public Result createQuestion(@RequestBody Question q) throws JsonProcessingException {
-        q.setStatus(2);
-        questionRepository.save(q);
+    public Result createInquiry(@RequestBody Inquiry inquiry) throws JsonProcessingException {
+        inquiryService.create(inquiry);
         return new Result(true, "Saved to H2");
     }
 
      @GetMapping("/api/v1/inquiries")
-     public Response getQuestions(Model model, @RequestHeader String host) throws JsonProcessingException {
-        return new Response(true, questionRepository.findAll());
+     public Response getInquirys(Model model, @RequestHeader String host) throws JsonProcessingException {
+        return new Response(true, inquiryService.all());
     }
 }

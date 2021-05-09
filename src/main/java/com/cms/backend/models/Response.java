@@ -7,7 +7,7 @@ public class Response {
     public boolean success;
     public List data;
 
-    public Response(boolean status, Iterable<Question> data) {
+    public Response(boolean status, Iterable<Inquiry> data) {
         this.success = status;
         this.data = (List) data;
     }
