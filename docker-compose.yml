@@ -6,9 +6,6 @@ services:
     container_name: mongo_db
     ports:
     - 27017:27017
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
 
   hotel:
     build: .
@@ -16,7 +13,9 @@ services:
     ports:
     - 8090:8090
     environment:
-      - MONGODB_URI=mongodb://root:example@mongodb:27017/hotel
+      - MONGODB_URI=mongodb://mongodb
+    links:
+      - mongodb
     volumes:
     - ./src/:/java/app/src
     depends_on:
