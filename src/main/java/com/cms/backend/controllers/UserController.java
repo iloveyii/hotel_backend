@@ -23,13 +23,19 @@ public class UserController {
         return new Result(true, "User saved");
     }
 
+    @PutMapping("/api/v1/users/{id}")
+    public Result updateUser(@RequestBody User user, @PathVariable  Integer id) throws JsonProcessingException {
+        userRepository.save(user);
+        return new Result(true, "User saved");
+    }
+
     @GetMapping("/api/v1/users")
     public ResponseUser getUsers() throws JsonProcessingException {
         return new ResponseUser(true, userRepository.findAll());
     }
 
     @DeleteMapping("/api/v1/users/{id}")
-    public Result deleteQuestion(@PathVariable  Integer id) throws JsonProcessingException {
+    public Result deleteUser(@PathVariable  Integer id) throws JsonProcessingException {
         Result result = new Result(true, "User deleted with id " + id );
         Optional<User> user =  userRepository.findById(id);
 

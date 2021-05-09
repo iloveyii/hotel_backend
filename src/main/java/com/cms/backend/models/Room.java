@@ -18,4 +18,5 @@ public class Room {
     private Integer id;
     private String number;
     private Double price;
+    private String booked;
 }

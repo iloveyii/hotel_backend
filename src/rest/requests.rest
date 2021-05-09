@@ -29,6 +29,24 @@ GET http://localhost:8090/api/v1/users
 Accept: application/json
 Content-Type: application/json
 
+### User delete
+
+DELETE http://localhost:8090/api/v1/users/11
+Accept: application/json
+Content-Type: application/json
+
+### User delete
+
+PUT http://localhost:8090/api/v1/users/10
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "ali@yahoo.com",
+  "password": "password10"
+}
+
+
 
 
 ### Room get
@@ -46,7 +64,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5M
 Content-Type: application/json
 
 {
-  "number": "0111",
-  "price": 300.0,
-  "booked": "yes"
+  "number": "0113",
+  "price": 200.0,
+  "booked": "no"
 }
