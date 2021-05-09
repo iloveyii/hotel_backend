@@ -12,7 +12,7 @@ Content-Type: application/json
 
 
 ##############################################
-      03 Entity : User, Room, Customer
+      04 Entities : User, Room, Customer, Booking
 ##############################################
 
 ### User post
@@ -89,6 +89,34 @@ Content-Type: application/json
 {
   "email": "j@d.com",
   "phone": "123-456-789"
+}
+
+
+##########
+BOOKING
+##########
+
+### Booking get
+
+GET http://localhost:8090/api/v1/bookings
+Accept: application/json
+Content-Type: application/json
+
+### Booking delete
+
+DELETE http://localhost:8090/api/v1/bookings/10
+Accept: application/json
+Content-Type: application/json
+
+### Booking update
+
+PUT http://localhost:8090/api/v1/bookings/10
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "ali@yahoo.com",
+  "password": "password10"
 }
 
 
