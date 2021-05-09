@@ -31,7 +31,7 @@ Content-Type: application/json
 
 ### User delete
 
-DELETE http://localhost:8090/api/v1/users/11
+DELETE http://localhost:8090/api/v1/users/10
 Accept: application/json
 Content-Type: application/json
 
