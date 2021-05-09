@@ -58,7 +58,12 @@ Spring boot based web application
 - Make jar `mvn clean install`
 - Run jar file `java -jar target/backend-0.0.1-SNAPSHOT.jar`
 
-### Shortcuts IntelliJ
+## Run with Docker Compose
+- Build `docker-compose up --build`
+
+
+
+## Shortcuts IntelliJ
 - Insert dependency -> open pom file -> ALT + Insert
 
 
