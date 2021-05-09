@@ -2,6 +2,6 @@ FROM openjdk:8
 RUN apt update
 RUN apt install maven -y
 WORKDIR /java/app
-COPY . .
+ADD . .
 RUN mvn clean install
 CMD ["java", "-jar", "target/backend-0.0.1-SNAPSHOT.jar"]

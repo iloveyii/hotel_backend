@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "username": "root@admin.com",
-  "password": "root12"
+  "password": "root123"
 }
 
 
@@ -72,6 +72,24 @@ Content-Type: application/json
   "booked": "no"
 }
 
+
+### Customer get
+
+GET http://localhost:8090/api/v1/customers
+Accept: application/json
+Content-Type: application/json
+
+
+### Customer post
+
+POST http://localhost:8090/api/v1/customers
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5MjE2LCJpYXQiOjE2MTU3MzEyMTZ9.nvrTFKISS3jvZEumIpjMNzSGAPLbAqN_rvM8EY_C4CPtiahaNEVCGu8VSU3oTP4ipKcK7wlBmFdi-wpukSdd9w
+Content-Type: application/json
+
+{
+  "email": "j@d.com",
+  "phone": "123-456-789"
+}
 
 
 ##############################################
