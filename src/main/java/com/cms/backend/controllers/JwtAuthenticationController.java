@@ -38,7 +38,7 @@ public class JwtAuthenticationController {
 
     @RequestMapping(value = "/api/v1/logins", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
-
+        System.out.println(authenticationRequest);
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
         final UserDetails userDetails = userDetailsService
@@ -50,6 +50,8 @@ public class JwtAuthenticationController {
     }
 
     private void authenticate(String username, String password) throws Exception {
+        System.out.println("username: " + username);
+        System.out.println("password: " + password);
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
