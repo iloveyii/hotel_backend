@@ -62,8 +62,7 @@ Content-Type: application/json
 
 ### Room post
 
-POST http://localhost:8090/api/v1/rooms
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5MjE2LCJpYXQiOjE2MTU3MzEyMTZ9.nvrTFKISS3jvZEumIpjMNzSGAPLbAqN_rvM8EY_C4CPtiahaNEVCGu8VSU3oTP4ipKcK7wlBmFdi-wpukSdd9w
+POST http://localhost:8099/api/v1/rooms
 Content-Type: application/json
 
 {
