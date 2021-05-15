@@ -16,11 +16,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String name;
     private String email;
     private String password;
 
     @Override
     public String toString() {
-        return String.format("%d, %s, %s", id, email, password);
+        return String.format("%d,%s, %s, %s", id, name, email, password);
     }
 }

@@ -24,6 +24,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjE1NzQ5M
 Content-Type: application/json
 
 {
+  "name": "ali",
   "email": "ali@yahoo.com",
   "password": "password"
 }
