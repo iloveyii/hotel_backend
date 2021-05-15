@@ -18,4 +18,9 @@ public class User {
     private Integer id;
     private String email;
     private String password;
+
+    @Override
+    public String toString() {
+        return String.format("%d, %s, %s", id, email, password);
+    }
 }

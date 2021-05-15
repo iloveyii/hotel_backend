@@ -14,6 +14,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @PostMapping("/api/v1/logins")
+    public Result loginUser(@RequestBody User user) throws JsonProcessingException {
+        boolean found = userService.find(user);
+        System.out.printf("Found ::: %s\n", found);
+        return new Result(found, "User saved");
+    }
+
     @PostMapping("/api/v1/users")
     public Result createUser(@RequestBody User user) throws JsonProcessingException {
         userService.create(user);

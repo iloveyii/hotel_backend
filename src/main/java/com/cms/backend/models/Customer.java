@@ -18,4 +18,8 @@ public class Customer {
     private Integer id;
     private String email;
     private String phone;
+
+    public String toString() {
+        return String.format("id: %d, email: %s, phone: %s", id, email, phone);
+    }
 }

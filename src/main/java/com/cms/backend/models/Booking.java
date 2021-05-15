@@ -16,8 +16,10 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer room_id;
-    private Integer customer_id;
-    private Double amount;
+    private String room_number;
+    private Double price;
+    private String name;
+    private String phone;
+    private String email;
     private String datetime;
 }

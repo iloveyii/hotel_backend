@@ -6,9 +6,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "root@admin.com",
-  "password": "root123"
+  "email": "ali@yahoo.com",
+  "password": "password"
 }
+
+
 
 
 ##############################################
@@ -62,7 +64,7 @@ Content-Type: application/json
 
 ### Room post
 
-POST http://localhost:8099/api/v1/rooms
+POST http://localhost:8090/api/v1/rooms
 Content-Type: application/json
 
 {
@@ -91,6 +93,14 @@ Content-Type: application/json
 }
 
 
+
+### Customer delete
+
+DELETE http://localhost:8090/api/v1/customers/10
+Accept: application/json
+Content-Type: application/json
+
+
 ##########
 BOOKING
 ##########
@@ -114,9 +124,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "room_id": 1,
-  "customer_id": 1,
-  "amount": 100,
+  "room_number": "111",
+  "price": 123.9,
+  "name": "alex",
+  "phone": "111-222-333",
+  "email": "alex@mail.com",
   "datetime": "2021-05-99 12:13:38 CEST"
 }
 

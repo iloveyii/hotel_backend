@@ -41,4 +41,11 @@ public class UserService {
         }
         return  false;
     }
+
+    public boolean find(User user) {
+        List<User> u =  userRepository.findByEmail(user.getEmail());
+        System.out.print("Find by email ::");
+        System.out.println(u);
+        return (u.size() > 0) && (u.get(0).getPassword().equals(user.getPassword()));
+    }
 }

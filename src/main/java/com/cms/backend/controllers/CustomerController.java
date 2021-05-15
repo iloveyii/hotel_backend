@@ -18,6 +18,8 @@ public class CustomerController {
 
     @PostMapping("/api/v1/customers")
     public Result createCustomer(@RequestBody Customer customer) throws JsonProcessingException {
+        System.out.print("Received Customer");
+        System.out.println(customer);
         customerService.create(customer);
         return new Result(true, "Customer saved");
     }
