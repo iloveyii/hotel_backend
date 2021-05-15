@@ -1,6 +1,5 @@
 package com.cms.backend.controllers;
 
-import com.cms.backend.data.InquiryRepository;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.apache.logging.log4j.LogManager;
@@ -20,9 +19,6 @@ import java.util.List;
 @Controller
 public class SiteController {
 
-    @Autowired
-    private InquiryRepository inquiryRepository;
-
     @Value("${server.web}")
     private String serverWeb;
 
@@ -31,7 +27,7 @@ public class SiteController {
 
     private String siteLanguage = "sv";
 
-    Logger logger = LogManager.getLogger(InquiryController.class);
+    Logger logger = LogManager.getLogger(SiteController.class);
     private String[] langs = {"sv", "en", "ar"};
 
 

@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  mongodb:
-    image: mongo
-    container_name: mongo_db
-    ports:
-    - 27017:27017
+ # mongodb:
+ #   image: mongo
+ #   container_name: mongo_db
+ #   ports:
+ #  - 27017:27017
 
   hotel:
     build: .
@@ -14,10 +14,10 @@ services:
     - 8090:8090
     environment:
       - MONGODB_URI=mongodb://mongodb
-    links:
-      - mongodb
+    # links:
+    #  - mongodb
     volumes:
     - ./src/:/java/app/src
-    depends_on:
-      - mongodb
+    # depends_on:
+    # - mongodb
 

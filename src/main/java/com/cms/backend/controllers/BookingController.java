@@ -18,6 +18,7 @@ public class BookingController {
 
     @PostMapping("/api/v1/bookings")
     public Result createBooking(@RequestBody Booking booking) throws JsonProcessingException {
+        System.out.printf("Received booking: %s\n", booking);
         bookingService.create(booking);
         return new Result(true, "Booking saved");
     }

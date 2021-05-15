@@ -16,10 +16,11 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String email;
+    private String name;
     private String phone;
+    private String email;
 
     public String toString() {
-        return String.format("id: %d, email: %s, phone: %s", id, email, phone);
+        return String.format("id: %d, name: %s, phone: %s, email: %s", id, name, phone, email);
     }
 }
