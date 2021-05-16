@@ -3,6 +3,19 @@ JAVA Spring boot
 Spring boot based web application
 
 ## Installations
+
+# Installations
+## Windows
+- Download [IntelliJ](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows)
+- Download [Docker Desktop](https://docs.docker.com/docker-for-windows/install/)
+- Download [Git Desktop](https://git-scm.com/download/win)
+    - You need to enable hyper-v/virtualization in your computer bios OR vmware player settings > hardware > processor > virtualization engine.
+    - If memory problem, then infact decreasing it from 4GB to something lower will work
+- Download [WSL2 update](org.openfx)
+
+
+## Ubuntu
+
 ### Java
 - Install update `sudo apt update`
 - Install jdk `sudo apt install openjdk-11-jdk`
