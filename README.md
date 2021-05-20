@@ -34,7 +34,7 @@ Spring boot based web application
 - `source /etc/environment`
 
 ### Maven
-- Install maven `sudo apt install maven`
+- Install maven `sudo apt update && sudo apt install maven`
  
 
 ### Spring
