@@ -11,7 +11,7 @@ Spring boot based web application
 - Download [Git Desktop](https://git-scm.com/download/win)
     - You need to enable hyper-v/virtualization in your computer bios OR vmware player settings > hardware > processor > virtualization engine.
     - If memory problem, then infact decreasing it from 4GB to something lower will work
-- Download [WSL2 update](org.openfx)
+- Download [WSL2 update](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 
 ## Ubuntu
